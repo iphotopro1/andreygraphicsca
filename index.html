@@ -1,1 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrey Graphics Inc.</title>
+  <meta name="description" content="Andrey Graphics Inc. — Graphic Design and Branding Services.">
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(104, 78, 255, 0.20), transparent 28%),
+        radial-gradient(circle at 82% 24%, rgba(0, 183, 255, 0.16), transparent 30%),
+        linear-gradient(135deg, #07090d 0%, #0d1118 48%, #080a0f 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .brand span {
+      color: #a89cff;
+    }
+
+    .top-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.04);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 64px;
+      padding: 58px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d5d0ff;
+      background: rgba(145, 125, 255, 0.08);
+      border: 1px solid rgba(145, 125, 255, 0.22);
+    }
+
+    h1 {
+      font-size: clamp(58px, 7vw, 104px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      margin-bottom: 28px;
+      max-width: 760px;
+    }
+
+    .accent {
+      background: linear-gradient(90deg, #ffffff 0%, #c2b6ff 45%, #7fdcff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .subheadline {
+      font-size: clamp(24px, 2.8vw, 34px);
+      color: #e4e7ec;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .description {
+      max-width: 650px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #a9b0bb;
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #111318;
+      box-shadow: 0 12px 34px rgba(255,255,255,0.10);
+    }
+
+    .btn-secondary {
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 15px;
+      color: #8f97a3;
+    }
+
+    .contact-info a {
+      color: #d8dce3;
+      text-decoration: none;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art {
+      width: 360px;
+      height: 360px;
+      border-radius: 38% 62% 58% 42% / 40% 38% 62% 60%;
+      background:
+        linear-gradient(
+          145deg,
+          #6f5cff 0%,
+          #3c95ff 48%,
+          #c34cff 100%
+        );
+      transform: rotate(7deg);
+      box-shadow:
+        0 42px 110px rgba(0,0,0,0.50),
+        0 0 100px rgba(109, 89, 255, 0.18);
+      position: relative;
+    }
+
+    .art::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border-radius: inherit;
+      border: 1px solid rgba(255,255,255,0.24);
+    }
+
+    .art::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      top: 20px;
+      right: 24px;
+      filter: blur(6px);
+    }
+
+    .floating {
+      position: absolute;
+      min-width: 170px;
+      padding: 18px 20px;
+      border-radius: 17px;
+      background: rgba(14, 17, 24, 0.78);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+
+    .floating.top {
+      top: 88px;
+      right: 0;
+    }
+
+    .floating.bottom {
+      left: 0;
+      bottom: 88px;
+    }
+
+    .floating small {
+      display: block;
+      margin-bottom: 6px;
+      color: #8d95a1;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      font-size: 11px;
+    }
+
+    .floating strong {
+      font-size: 17px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0 32px;
+      color: #7f8793;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-top: 36px;
+      }
+
+      .visual {
+        min-height: 420px;
+      }
+
+      .art {
+        width: 285px;
+        height: 285px;
+      }
+
+      .floating.top {
+        top: 46px;
+        right: 18px;
+      }
+
+      .floating.bottom {
+        bottom: 46px;
+        left: 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      header {
+        padding: 20px 0;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+
+      .subheadline {
+        font-size: 23px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .visual {
+        min-height: 360px;
+      }
+
+      .art {
+        width: 230px;
+        height: 230px;
+      }
+
+      .floating {
+        min-width: 145px;
+        padding: 14px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+
+    <header>
+      <div class="brand">
+        ANDREY GRAPHICS <span>INC.</span>
+      </div>
+
+      <a class="top-link" href="mailto:andreygraphics1@gmail.com">
+        Contact
+      </a>
+    </header>
+
+    <main>
+      <section>
+        <div class="eyebrow">
+          Graphic Design & Branding
+        </div>
+
+        <h1>
+          Design that
+          <span class="accent">builds brands.</span>
+        </h1>
+
+        <div class="subheadline">
+          Graphic Design and Branding Services
+        </div>
+
+        <p class="description">
+          Professional graphic design and branding solutions for businesses and individuals.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+18184540157">
+            Call 818-454-0157
+          </a>
+
+          <a class="btn btn-secondary" href="mailto:andreygraphics1@gmail.com">
+            Email Us
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <span>
+            Phone:
+            <a href="tel:+18184540157">818-454-0157</a>
+          </span>
+
+          <span>
+            Email:
+            <a href="mailto:andreygraphics1@gmail.com">
+              andreygraphics1@gmail.com
+            </a>
+          </span>
+        </div>
+      </section>
+
+      <section class="visual">
+        <div class="art"></div>
+
+        <div class="floating top">
+          <small>Creative</small>
+          <strong>Brand Identity</strong>
+        </div>
+
+        <div class="floating bottom">
+          <small>Studio</small>
+          <strong>Andrey Graphics Inc.</strong>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Andrey Graphics Inc.
+    </footer>
+
+  </div>
+</body>
+</html>
