@@ -21,10 +21,10 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #ffffff;
       background:
-        radial-gradient(circle at 12% 18%, rgba(113, 78, 255, 0.35), transparent 32%),
-        radial-gradient(circle at 88% 22%, rgba(0, 174, 255, 0.25), transparent 30%),
-        radial-gradient(circle at 55% 85%, rgba(180, 55, 255, 0.18), transparent 34%),
-        linear-gradient(135deg, #05070b 0%, #0a0f18 45%, #07111c 100%);
+        radial-gradient(circle at 15% 20%, rgba(120, 92, 255, 0.22), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(0, 190, 255, 0.18), transparent 26%),
+        radial-gradient(circle at 50% 85%, rgba(255, 80, 140, 0.10), transparent 28%),
+        linear-gradient(135deg, #05070c 0%, #0a0f18 45%, #06090f 100%);
       overflow-x: hidden;
       position: relative;
     }
@@ -36,28 +36,13 @@
       background-image:
         linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 55px 55px;
+      background-size: 54px 54px;
       mask-image: linear-gradient(to bottom, rgba(0,0,0,0.75), transparent 95%);
       pointer-events: none;
       z-index: 0;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      width: 650px;
-      height: 650px;
-      border-radius: 50%;
-      background: rgba(87, 70, 255, 0.10);
-      filter: blur(120px);
-      top: -260px;
-      left: 50%;
-      transform: translateX(-50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .shell {
+    .page {
       width: min(1180px, calc(100% - 36px));
       margin: 0 auto;
       min-height: 100vh;
@@ -89,7 +74,7 @@
       text-decoration: none;
       padding: 12px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);
       transition: 0.2s ease;
@@ -104,20 +89,20 @@
       flex: 1;
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      align-items: center;
       gap: 64px;
-      padding: 58px 0 72px;
+      align-items: center;
+      padding: 42px 0 70px;
     }
 
     .eyebrow {
       display: inline-block;
       margin-bottom: 22px;
-      padding: 9px 14px;
+      padding: 10px 14px;
       border-radius: 999px;
       font-size: 12px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #d5d0ff;
+      color: #d9d3ff;
       background: rgba(145, 125, 255, 0.08);
       border: 1px solid rgba(145, 125, 255, 0.22);
     }
@@ -125,13 +110,13 @@
     h1 {
       font-size: clamp(58px, 7vw, 104px);
       line-height: 0.95;
-      letter-spacing: -0.055em;
-      margin-bottom: 28px;
+      letter-spacing: -0.06em;
+      margin-bottom: 26px;
       max-width: 760px;
     }
 
     .accent {
-      background: linear-gradient(90deg, #ffffff 0%, #c2b6ff 45%, #7fdcff 100%);
+      background: linear-gradient(90deg, #ffffff 0%, #c4b7ff 48%, #7edcff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -140,7 +125,7 @@
 
     .subheadline {
       font-size: clamp(24px, 2.8vw, 34px);
-      color: #e4e7ec;
+      color: #e6e9ef;
       margin-bottom: 34px;
       font-weight: 500;
     }
@@ -156,7 +141,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
+      min-height: 54px;
       padding: 0 24px;
       border-radius: 14px;
       text-decoration: none;
@@ -172,7 +157,7 @@
 
     .btn-secondary {
       color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);
     }
@@ -186,15 +171,15 @@
       flex-wrap: wrap;
       gap: 22px;
       font-size: 15px;
-      color: #8f97a3;
+      color: #98a0ac;
     }
 
     .contact-info a {
-      color: #d8dce3;
+      color: #dfe3ea;
       text-decoration: none;
     }
 
-    .visual {
+    .right-side {
       position: relative;
       min-height: 560px;
       display: flex;
@@ -202,76 +187,106 @@
       justify-content: center;
     }
 
-    .art {
-      width: 360px;
-      height: 360px;
-      border-radius: 38% 62% 58% 42% / 40% 38% 62% 60%;
-      background:
-        linear-gradient(
-          145deg,
-          #6f5cff 0%,
-          #3c95ff 48%,
-          #c34cff 100%
-        );
-      transform: rotate(7deg);
-      box-shadow:
-        0 42px 110px rgba(0,0,0,0.50),
-        0 0 100px rgba(109, 89, 255, 0.22);
+    .frame {
+      width: 100%;
+      max-width: 470px;
+      min-height: 520px;
+      border-radius: 30px;
       position: relative;
-    }
-
-    .art::before {
-      content: "";
-      position: absolute;
-      inset: 20px;
-      border-radius: inherit;
-      border: 1px solid rgba(255,255,255,0.24);
-    }
-
-    .art::after {
-      content: "";
-      position: absolute;
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      top: 20px;
-      right: 24px;
-      filter: blur(6px);
-    }
-
-    .floating {
-      position: absolute;
-      min-width: 170px;
-      padding: 18px 20px;
-      border-radius: 17px;
-      background: rgba(14, 17, 24, 0.78);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02)),
+        linear-gradient(135deg, rgba(96, 72, 255, 0.18), rgba(0, 181, 255, 0.10));
       border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.40);
+      padding: 28px;
     }
 
-    .floating.top {
-      top: 88px;
-      right: 0;
+    .frame::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      top: -180px;
+      right: -160px;
     }
 
-    .floating.bottom {
-      left: 0;
-      bottom: 88px;
+    .frame::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.06);
+      bottom: -170px;
+      left: -120px;
     }
 
-    .floating small {
-      display: block;
-      margin-bottom: 6px;
-      color: #8d95a1;
+    .mini-bar {
+      width: 96px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #9f8cff, #56ccff);
+      margin-bottom: 26px;
+    }
+
+    .panel {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border-radius: 22px;
+      padding: 22px;
+      background: rgba(8, 12, 20, 0.62);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .card-label {
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.10em;
-      font-size: 11px;
+      letter-spacing: 0.13em;
+      color: #8f98a7;
+      margin-bottom: 10px;
     }
 
-    .floating strong {
-      font-size: 17px;
+    .card-title {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .lines {
+      display: grid;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .line {
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.24), rgba(255,255,255,0.06));
+    }
+
+    .line.short {
+      width: 60%;
+    }
+
+    .contact-card a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 12px;
     }
 
     footer {
@@ -284,32 +299,20 @@
     @media (max-width: 900px) {
       main {
         grid-template-columns: 1fr;
-        gap: 26px;
-        padding-top: 36px;
+        gap: 28px;
       }
 
-      .visual {
-        min-height: 420px;
+      .right-side {
+        min-height: auto;
       }
 
-      .art {
-        width: 285px;
-        height: 285px;
-      }
-
-      .floating.top {
-        top: 46px;
-        right: 18px;
-      }
-
-      .floating.bottom {
-        bottom: 46px;
-        left: 18px;
+      .frame {
+        min-height: 460px;
       }
     }
 
     @media (max-width: 600px) {
-      .shell {
+      .page {
         width: min(100% - 24px, 1180px);
       }
 
@@ -337,25 +340,21 @@
         width: 100%;
       }
 
-      .visual {
-        min-height: 360px;
+      .frame {
+        padding: 20px;
+        border-radius: 22px;
+        min-height: 420px;
       }
 
-      .art {
-        width: 230px;
-        height: 230px;
-      }
-
-      .floating {
-        min-width: 145px;
-        padding: 14px 16px;
+      .card-title {
+        font-size: 21px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="shell">
+  <div class="page">
 
     <header>
       <div class="brand">
@@ -407,17 +406,32 @@
         </div>
       </section>
 
-      <section class="visual">
-        <div class="art"></div>
+      <section class="right-side">
+        <div class="frame">
+          <div class="mini-bar"></div>
 
-        <div class="floating top">
-          <small>Creative</small>
-          <strong>Brand Identity</strong>
-        </div>
+          <div class="panel">
+            <div class="card">
+              <div class="card-label">Studio</div>
+              <div class="card-title">Andrey Graphics Inc.</div>
+            </div>
 
-        <div class="floating bottom">
-          <small>Studio</small>
-          <strong>Andrey Graphics Inc.</strong>
+            <div class="card">
+              <div class="card-label">Focus</div>
+              <div class="card-title">Graphic Design & Brand Identity</div>
+
+              <div class="lines">
+                <div class="line"></div>
+                <div class="line short"></div>
+              </div>
+            </div>
+
+            <div class="card contact-card">
+              <div class="card-label">Contact</div>
+              <a href="tel:+18184540157">818-454-0157</a>
+              <a href="mailto:andreygraphics1@gmail.com">andreygraphics1@gmail.com</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
